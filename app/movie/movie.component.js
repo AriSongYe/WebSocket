@@ -1,13 +1,13 @@
 'use strict';
 
-angular.module('video')
-  .component('videoComponent', {
-    templateUrl : 'video/video.template.html',
-    controller: ['$http', function videoController($http){
+angular.module('movie')
+  .component('movieComponent', {
+    templateUrl : 'movie/movie.template.html',
+    controller: ['$http', function movieController($http){
       var self = this;
-      self.videoUrl = 'https://yts.mx/api/v2/list_movies.json';
+      self.movieUrl = 'https://yts.mx/api/v2/list_movies.json';
 
-      $http.get(self.videoUrl)
+      $http.get(self.movieUrl)
         .then(function(response) {
           console.log('Movie details fetched:', response.data);  // 데이터 로그 출력
           self.movieList = response.data;
